@@ -1,0 +1,61 @@
+"""19-EDO Convert — скрипт Piano roll для FL Studio (20.9+).
+
+Превращает ноты, записанные «по шагам 19-EDO» (каждая клавиша = 1 шаг
+1200/19 ≈ 63.158 цента), в обычные 12-TET ноты + Fine pitch (pitchofs),
+чтобы партия звучала в 19-EDO на любом канале, который учитывает
+Note fine pitch.
+
+Ограничение FL: pitchofs хранится в десятых долях полутона (10 центов),
+поэтому погрешность до ±5 центов. Для точной перестройки используйте
+VFX Script / Kontakt KSP / MTS-ESP (см. docs/INSTRUCTION_RU.md).
+
+Действие обратимо через Ctrl+Z.
+"""
+
+import math
+
+import flpianoroll as flp
+
+EDO = 19
+A4_CHOICES = [440.0, 437.0, 432.0, 442.0, 415.0]
+A4_LABELS = ["440 Hz", "437 Hz", "432 Hz", "442 Hz", "415 Hz", "Custom (knob)"]
+
+
+def createDialog():
+    form = flp.ScriptDialog(
+        "19-EDO Convert",
+        "Notes are treated as 19-EDO steps (one key = 63.158 cents) and "
+        "converted to the nearest 12-TET key + note fine pitch.\n"
+        "Reference key (69 = A5 in FL) plays A at the chosen frequency.\n"
+        "Fine pitch resolution in FL is 10 cents (error <= 5 cents).")
+    form.addInputCombo("A4 reference", A4_LABELS, 0)
+    form.addInputKnob("Custom A4 (Hz)", 437.0, 400.0, 480.0)
+    form.addInputKnobInt("Reference key (A)", 69, 0, 127)
+    form.addInputCombo("Notes", ["Selected (or all if none)", "All"], 0)
+    return form
+
+
+def convert(number, a4, ref_key):
+    """Шаг 19-EDO -> (12-TET клавиша, pitchofs в десятых полутона)."""
+    cents = (number - ref_key) * 1200.0 / EDO + 1200.0 * math.log2(a4 / 440.0)
+    semis = int(math.floor(cents / 100.0 + 0.5))
+    key = 69 + semis
+    ofs = int(round((cents - semis * 100.0) / 10.0))
+    return max(0, min(127, key)), max(-120, min(120, ofs))
+
+
+def apply(form):
+    choice = int(form.getInputValue("A4 reference"))
+    if 0 <= choice < len(A4_CHOICES):
+        a4 = A4_CHOICES[choice]
+    else:
+        a4 = float(form.getInputValue("Custom A4 (Hz)"))
+    ref_key = int(form.getInputValue("Reference key (A)"))
+    only_selected = int(form.getInputValue("Notes")) == 0
+
+    notes = [flp.score.getNote(i) for i in range(flp.score.noteCount)]
+    if only_selected and any(n.selected for n in notes):
+        notes = [n for n in notes if n.selected]
+
+    for n in notes:
+        n.number, n.pitchofs = convert(n.number, a4, ref_key)
