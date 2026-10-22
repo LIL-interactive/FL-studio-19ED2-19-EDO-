@@ -16,23 +16,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "BOOK.html")
 
 GROUPS = [
-    ("Курс Advanced", [
-        "Advanced/00_NAVIGATOR.md",
-        "Advanced/01_MUSIC_BASICS.md",
-        "Advanced/02_HARMONY.md",
-        "Advanced/03_MELODY.md",
-        "Advanced/04_RHYTHM_DRUMS.md",
-        "Advanced/05_ARRANGEMENT_FORM.md",
-        "Advanced/06_ORCHESTRATION.md",
-        "Advanced/07_SOUND_DESIGN_SYNTHESIS.md",
-        "Advanced/08_MIXING.md",
-        "Advanced/09_MASTERING.md",
-        "Advanced/10_GAME_AUDIO.md",
-        "Advanced/11_EAR_WORKFLOW_STUDIO.md",
-        "Advanced/12_MICROTONAL_19EDO.md",
-        "Advanced/13_CAREER_BUSINESS.md",
-        "Advanced/14_GLOSSARY.md",
-    ]),
+    ("Начало", ["Advanced/00_NAVIGATOR.md"]),
+    ("Часть 0. Как учиться", ["Advanced/01_LEARNING_HOW_TO_LEARN.md", "Advanced/02_STUDY_PLAN.md"]),
+    ("Часть 1. Язык музыки", ["Advanced/03_MUSIC_BASICS.md", "Advanced/04_HARMONY.md", "Advanced/05_MELODY.md", "Advanced/06_RHYTHM_DRUMS.md"]),
+    ("Часть 2. Создание трека", ["Advanced/07_ARRANGEMENT_FORM.md", "Advanced/08_SOUND_DESIGN_SYNTHESIS.md", "Advanced/09_ORCHESTRATION.md"]),
+    ("Часть 3. Звук", ["Advanced/10_MIXING.md", "Advanced/11_MASTERING.md"]),
+    ("Часть 4. Игры и эксперименты", ["Advanced/12_GAME_AUDIO.md", "Advanced/13_MICROTONAL_19EDO.md"]),
+    ("Часть 5. Практика и профессия", ["Advanced/14_EAR_WORKFLOW_STUDIO.md", "Advanced/15_CAREER_BUSINESS.md"]),
+    ("Приложения", ["Advanced/16_GLOSSARY.md", "Advanced/17_RESOURCES.md", "Advanced/18_LISTENING.md"]),
     ("Справочники", [
         "TUTORIALS/01_MIXING_MASTERING_LUFS_RU.md",
         "TUTORIALS/02_GAME_MUSIC_COMPOSITION_RU.md",
@@ -170,7 +161,11 @@ class Doc:
             para.append(stripped)
             i += 1
         flush_para()
-        return "\n".join(out)
+        result = "\n".join(out)
+        # ответы самопроверки скрыты, пока читатель сам не откроет их
+        return re.sub(r'<h3 id="[^"]+">Ответы</h3>\n(<ol>.*?</ol>)',
+                      r'<details class="answers"><summary>Показать ответы</summary>\1</details>',
+                      result, flags=re.S)
 
     def table(self, block):
         rows = [[c.strip() for c in r.strip("|").split("|")] for r in block
@@ -271,6 +266,10 @@ border-top:1px solid var(--border)}
 .pager a{display:block;max-width:48%;padding:10px 14px;border:1px solid var(--border);
 border-radius:8px}
 .menu-btn{display:none}
+details.answers{border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin:0 0 18px;
+background:var(--row)}
+details.answers summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details.answers[open] summary{margin-bottom:8px}
 @media (max-width:900px){
 .layout{display:block}
 nav{position:fixed;inset:0 auto 0 0;width:85%;max-width:340px;z-index:10;
@@ -370,7 +369,7 @@ def main():
 """
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(page)
-    print(f"BOOK.html: {len(docs)} руководств, {len(page) // 1024} КБ")
+    print(f"BOOK.html: документов — {len(docs)}, размер — {len(page) // 1024} КБ")
 
 
 if __name__ == "__main__":
