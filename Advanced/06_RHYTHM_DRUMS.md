@@ -170,7 +170,7 @@
 | Fruity Slicer | Быстрая нарезка лупа по долям |
 | Sampler (Channel sampler) | Любой сэмпл, огибающие, питч |
 | Drumaxx, Drumpad | Синтетические ударные |
-| Transient Processor | Атака и хвост удара |
+| Transient Processor (покупается отдельно) | Атака и хвост удара |
 | Fruity Limiter (sidechain) | «Качание» баса от бочки |
 
 ### Создание собственной бочки (layering)

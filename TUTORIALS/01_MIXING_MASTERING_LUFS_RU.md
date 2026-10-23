@@ -132,7 +132,7 @@ Spotify, YouTube, Apple Music и другие площадки автомати�
 5. Группы (шины): Drums, Bass, Music/Synth, Vocals, FX → по одной дорожке-шине на группу. Маршрут: правый клик на треугольнике под дорожкой → Route to this track only.
 6. Цвета и имена дорожек — экономят часы.
 7. Референсы: импортируйте 2–3 готовых трека того же жанра на отдельную дорожку, отправленную сразу в выход (без мастер-цепочки), и сравнивайте на одинаковой громкости LUFS (ADPTR Metric AB, Youlean или просто по уровню).
-8. Мониторинг: уровень прослушивания ≈ 75–83 dB SPL, т. е. разговорная громкость. Слушайте также на телефоне, в наушниках-«затычках» и в машине.
+8. Мониторинг: работайте на постоянной, откалиброванной громкости (система K-System Боба Каца) и не превышайте безопасное время по рекомендации NIOSH: 85 дБА — 8 часов, каждые +3 дБА — вдвое меньше (подробно — Advanced/15_STUDIO_SETUP.md). Слушайте также на телефоне, в наушниках-«затычках» и в машине.
 
 ---
 
@@ -182,7 +182,7 @@ Spotify, YouTube, Apple Music и другие площадки автомати�
 | Knee | Плавность включения | soft для вокала/шины |
 | Makeup/Gain | Вернуть громкость | сравнивайте on/off на одной громкости |
 
-Плагины FL: Fruity Compressor (простой), Fruity Limiter (режим COMP — полноценный компрессор, плюс Noise gate и sidechain), Maximus (многополосный), Fruity Multiband Compressor (FL 21+), Transient Processor (атака/сустейн).
+Плагины FL: Fruity Compressor (простой), Fruity Limiter (режим COMP — полноценный компрессор, плюс Noise gate и sidechain), Maximus (многополосный), Transient Processor (атака/сустейн, плагин Image-Line, покупается отдельно).
 
 Параллельная (New York) компрессия: отправьте ударные в отдельную дорожку (send), сожмите её очень сильно (10:1, −10…−15 dB GR) и подмешайте к оригиналу на −10…−15 dB. Получится плотность без потери удара.
 
@@ -251,7 +251,7 @@ Spotify, YouTube, Apple Music и другие площадки автомати�
 | № | Плагин (FL) | Альтернатива VST | Зачем | Стартовые значения |
 |---|---|---|---|---|
 | 1 | Fruity Parametric EQ 2 | FabFilter Pro-Q, TDR Nova | Коррекция: HPF 20–30 Hz, вырезы гула/резкости | ±0,5…2 dB |
-| 2 | Fruity Multiband Compressor / Maximus | TDR Kotelnikov, Ozone Dynamics | Контроль низа и резких верхов | 1–2 dB GR на полосу |
+| 2 | Maximus | TDR Kotelnikov, Ozone Dynamics | Контроль низа и резких верхов | 1–2 dB GR на полосу |
 | 3 | Fruity Compressor / Fruity Limiter (COMP) | SSL-type Bus Comp, Kotelnikov, Glue | «Склейка» | Ratio 1,5–2:1, Attack 10–30 мс, Release auto/100–300 мс, 1–2 dB GR |
 | 4 | Сатурация: Fruity Soft Clipper, Waveshaper, Soundgoodizer (аккуратно, mix 10–30 %) | FabFilter Saturn, Softube Tape, Kclip | Плотность и гармоники | минимально |
 | 5 | Fruity Stereo Shaper | Ozone Imager | Моно низа, лёгкое расширение верха | моно < 120 Hz |
@@ -274,7 +274,7 @@ Spotify, YouTube, Apple Music и другие площадки автомати�
 
 ### 6.5 Автомастеринг
 
-- FL Cloud Mastering (встроен в FL Studio 21.2+ — File → Export / FL Cloud): быстро, для черновиков и демо.
+- FL Cloud Mastering (ИИ-мастеринг, появился в FL Studio 21.2; часть функций FL Cloud требует подписки): быстро, для черновиков и демо.
 - iZotope Ozone — Master Assistant: хорошая отправная точка, затем правите вручную.
 - LANDR, eMastered, BandLab Mastering — онлайн-сервисы.
 - Используйте как референс, не как финальное решение для важного релиза.
@@ -322,12 +322,12 @@ File → Export → WAV/MP3/OGG/FLAC (Ctrl+R).
 | Задача | Плагин FL |
 |---|---|
 | EQ | Fruity Parametric EQ 2, Fruity 7 Band EQ |
-| Компрессия | Fruity Compressor, Fruity Limiter (COMP), Fruity Multiband Compressor |
+| Компрессия | Fruity Compressor, Fruity Limiter (COMP), Maximus (многополосный) |
 | Многополосная динамика / de-ess / лимитер | Maximus |
 | Лимитер | Fruity Limiter, Maximus |
 | Клиппер / сатурация | Fruity Soft Clipper, Fruity Waveshaper, Fruity Blood Overdrive, Fruity Fast Dist, Soundgoodizer |
-| Транзиенты | Transient Processor |
-| Разделение по полосам | Frequency Splitter, Patcher |
+| Транзиенты | Transient Processor (плагин Image-Line, покупается отдельно) |
+| Разделение по полосам | Frequency Splitter (с FL Studio 20.8), Patcher |
 | Ревер | Fruity Reeverb 2, Fruity Convolver |
 | Дилей | Fruity Delay 3, Fruity Delay Bank |
 | Стерео | Fruity Stereo Shaper, Fruity Stereo Enhancer |
@@ -362,13 +362,11 @@ File → Export → WAV/MP3/OGG/FLAC (Ctrl+R).
 - Waves: SSL G-Master Buss Compressor, CLA-76/2A, L2/L3, Abbey Road-серия.
 - Soundtoys: Decapitator, EchoBoy, Little AlterBoy.
 - ADPTR Metric AB — сравнение с референсами.
-- Sonarworks SoundID Reference — калибровка наушников и мониторов (очень полезно в неакустической комнате).
 - Kilohearts Disperser, Trackspacer (автоматическое освобождение места под вокал/лид).
 
-### 9.4 Железо и комната (кратко)
+### 9.4 Оборудование и комната
 
-- Закрытые наушники для записи, открытые (Sennheiser HD 600/650, Beyerdynamic DT 880/990 Pro) — для сведения.
-- Мониторы бесполезны в неподготовленной комнате: сначала акустика (поглотители на первых отражениях, басовые ловушки в углах) или калибровка.
+Требования к компьютеру, настройка драйвера и буфера, расстановка мониторов, акустика, безопасная громкость и эргономика с источниками — в модуле Advanced/15_STUDIO_SETUP.md.
 
 ---
 
@@ -384,7 +382,7 @@ File → Export → WAV/MP3/OGG/FLAC (Ctrl+R).
 | Бас «пропадает» на телефоне | Сатурация баса (гармоники 100–400 Hz). |
 | Всё широкое, моно разваливается | Моно ниже 120 Hz, проверка Stereo Shaper → Mono. |
 | Сравнение «до/после» без выравнивания громкости | Выравнивайте громкость при сравнении, иначе «громче = лучше». |
-| Сведение на высокой громкости часами | 75–83 dB SPL, перерывы каждые 45–60 минут. |
+| Сведение на высокой громкости часами | Калибровка громкости по K-System, контроль времени по NIOSH (Advanced/15_STUDIO_SETUP.md) |
 
 ---
 

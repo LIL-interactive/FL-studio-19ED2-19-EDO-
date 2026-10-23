@@ -1,4 +1,4 @@
-# 17. Библиотека ресурсов: книги, курсы, каналы, сообщества
+# 19. Библиотека ресурсов: книги, курсы, каналы, сообщества
 
 Что вы узнаете: какие книги, курсы, видеоканалы, инструменты и сообщества стоит использовать на каждом этапе и чем каждый ресурс полезен.
 
@@ -184,12 +184,35 @@
 | Lena Raine, Celeste | https://kexp.org/read/2019/3/29/confronting-myself-lena-raine-soundtracking-celeste-and-her-new-album-oneknowing |
 | Mick Gordon, DOOM | https://www.thumbsticks.com/mick-gordon-crafted-doom-soundtrack/ |
 | Christopher Larkin, Hollow Knight | https://indiegamefans.com/?p=8352 |
+| Юки Кадзиура, научный разбор (Jocoy, Hoffer, 2023) | https://www.mutualimages-journal.org/index.php/mi/article/download/119/95/452 |
+| Юки Кадзиура, Anime Expo 2012 | https://animediet.net/conventions/yuki-kajiurafictionjunction-press-conference-transcript |
+| Юки Кадзиура, Kara no Kyoukai (2008) | https://canta-per-me.net/yuki-kajiura/interviews/knk-yk-interview/ |
+| Юки Кадзиура, Madoka Magica: Rebellion | https://canta-per-me.net/yuki-kajiura/interviews/madoka-rebellion-kajiura-interview-english/ |
+| Ясухару Таканаси (2024, 2026) | https://animecorner.me/interview-discussing-anime-music-with-yasuharu-takanashi/ , https://getyourcomicon.co.uk/blog/2026/09/29/composer-spotlight-yasuharu-takanashi/ |
+| Кэндзи Каваи, Ghost in the Shell и студия AUBE | https://en.antelopeaudio.com/2023/10/kawai-kenji-interview-pure2/ |
+| Ёко Канно, Cowboy Bebop | https://www.dazeddigital.com/music/article/51208/1/how-yoko-kanno-created-the-cowboy-bebop-soundtrack |
 | Gareth Coker, Ori and the Blind Forest | https://mcvuk.com/?p=69409 , https://vgmonline.net/garethcokerinterview/ |
 | Breath of the Wild | https://www.zeldadungeon.net/musical-musings-listening-closely-to-the-emptiness-of-breath-of-the-wilds-hyrule-field-day/ |
 | Woody Jackson, Red Dead Redemption | https://www.rollingstone.it/?p=434978 |
 | Darren Korb, Bastion и Transistor | https://gamebanshee.com/d3f8 , https://www.destructoid.com/the-old-world-european-electronic-noir-of-transistor/ |
 | Junkie XL, Studio Time | https://tomholkenborg.com/news/tom-holkenborg-launches-youtube-series-studio-time |
 | Громкость в играх, Sony ASWG | https://designingsound.org/2012/07/30/video-games-and-loudness-standards-interview-with-sonys-garry-taylor/ |
+
+---
+
+## 8. Документация по оборудованию и рабочему месту
+
+| Тема | Источник |
+|---|---|
+| Требования FL Studio к компьютеру | https://www.image-line.com/fl-studio/download |
+| Драйвер, буфер, частота в FL Studio | https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/envsettings_audio.htm |
+| Горячие клавиши FL Studio | https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/basics_shortcuts.htm |
+| Экспорт и параметр Tail | https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/fformats_save_export.htm |
+| Расстановка мониторов (Genelec) | https://www.genelec.com/monitor-placement |
+| Домашняя студия (Genelec) | https://www.genelec.com/how-to-build-a-home-studio |
+| Безопасная громкость (NIOSH) | https://www.cdc.gov/niosh/noise/about/noise.html |
+| Калибровка громкости K-System (Bob Katz) | https://www.digido.com/ufaqs/monitor-calibration-with-k-system/ |
+| Эргономика рабочего места (OSHA) | https://www.osha.gov/etools/computer-workstations |
 
 ---
 
@@ -211,4 +234,4 @@
 
 ## Что дальше
 
-[18. Что слушать](18_LISTENING.md).
+[20. Что слушать](20_LISTENING.md).

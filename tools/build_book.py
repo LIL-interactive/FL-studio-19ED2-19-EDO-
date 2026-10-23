@@ -21,9 +21,9 @@ GROUPS = [
     ("Часть 1. Язык музыки", ["Advanced/03_MUSIC_BASICS.md", "Advanced/04_HARMONY.md", "Advanced/05_MELODY.md", "Advanced/06_RHYTHM_DRUMS.md"]),
     ("Часть 2. Создание трека", ["Advanced/07_ARRANGEMENT_FORM.md", "Advanced/08_SOUND_DESIGN_SYNTHESIS.md", "Advanced/09_ORCHESTRATION.md"]),
     ("Часть 3. Звук", ["Advanced/10_MIXING.md", "Advanced/11_MASTERING.md"]),
-    ("Часть 4. Игры и эксперименты", ["Advanced/12_GAME_AUDIO.md", "Advanced/13_MICROTONAL_19EDO.md"]),
-    ("Часть 5. Практика и профессия", ["Advanced/14_EAR_WORKFLOW_STUDIO.md", "Advanced/15_CAREER_BUSINESS.md"]),
-    ("Приложения", ["Advanced/16_GLOSSARY.md", "Advanced/17_RESOURCES.md", "Advanced/18_LISTENING.md"]),
+    ("Часть 4. Игры и стили", ["Advanced/12_GAME_AUDIO.md", "Advanced/13_JAPANESE_COMPOSERS.md", "Advanced/14_MICROTONAL_19EDO.md"]),
+    ("Часть 5. Практика и профессия", ["Advanced/15_STUDIO_SETUP.md", "Advanced/16_EAR_WORKFLOW.md", "Advanced/17_CAREER_BUSINESS.md"]),
+    ("Приложения", ["Advanced/18_GLOSSARY.md", "Advanced/19_RESOURCES.md", "Advanced/20_LISTENING.md"]),
     ("Справочники", [
         "TUTORIALS/01_MIXING_MASTERING_LUFS_RU.md",
         "TUTORIALS/02_GAME_MUSIC_COMPOSITION_RU.md",
